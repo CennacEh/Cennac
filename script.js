@@ -1,5 +1,17 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+
+    if(localStorage.getItem("visitorCount")) {
+        // If it exists, retrieve it and increment by 1
+        var count = parseInt(localStorage.getItem("visitorCount"));
+        count++;
+        localStorage.setItem("visitorCount", count);
+    } else {
+        // If it doesn't exist, set it to 1
+        localStorage.setItem("visitorCount", 1);
+    }
+
+    
     toggleSection("welcome");
     // Initially hide about, portfolio, and contact sections
     document.getElementById("about").style.display = "none";
