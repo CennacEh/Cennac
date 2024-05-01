@@ -156,3 +156,56 @@ text-align: left;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     z-index: 9999;
 }
+.form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input[id="firstname"] {
+    width: calc(100% - 600px);
+    padding: 10px;
+    border:4px solid #cccccc;
+    border-radius: 5px;
+  }
+  .form-group textarea {
+    width: calc(100% - 200px);
+    height: 200px;
+    padding: 10px;
+    border: 4px solid #cccccc;
+    border-radius: 5px;
+    resize: vertical; /* Allow vertical resizing */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+  }
+  .form-group input[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .form-group input[type="submit"]:hover {
+    background-color: #45a049;
+  }
