@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+    document.getElementById("gform").addEventListener("submit", function(event) {
+        var emailInput = document.getElementById("firstname").value;
+        if (!validateEmail(emailInput)) {
+          document.getElementById("emailError").style.display = "block";
+          event.preventDefault();
+        }
+        else {
+            document.getElementById("emailError").style.display = "none"
+            document.getElementById("emailSuc").style.display = "block";
+        }
+      });
+    
+      function validateEmail(email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+      }
 
+    
     if(localStorage.getItem("visitorCount")) {
         // If it exists, retrieve it and increment by 1
         var count = parseInt(localStorage.getItem("visitorCount"));
@@ -10,6 +27,30 @@ document.addEventListener("DOMContentLoaded", function() {
         // If it doesn't exist, set it to 1
         localStorage.setItem("visitorCount", 1);
     }
+    
+// Check if the visitor count is stored in localStorage
+if(localStorage.getItem("visitorData")) {
+    // If it exists, retrieve it
+    var visitorData = JSON.parse(localStorage.getItem("visitorData"));
+} else {
+    // If it doesn't exist, initialize an empty object
+    var visitorData = {};
+}
+
+// Get the IP address of the visitor
+var ipAddress = "<?php echo $_SERVER['REMOTE_ADDR']; ?>";
+
+// Check if the IP address is already in the visitorData object
+if(visitorData[ipAddress]) {
+    // If it exists, increment the count by 1
+    visitorData[ipAddress]++;
+} else {
+    // If it doesn't exist, set it to 1
+    visitorData[ipAddress] = 1;
+}
+
+// Update the visitorData in localStorage
+localStorage.setItem("visitorData", JSON.stringify(visitorData));
 
     
     toggleSection("welcome");
