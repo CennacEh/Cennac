@@ -40,14 +40,14 @@
             <h2>My Projects</h2>
             </div>
             <div class="project">
-                <a href="https://github.com/CennacEh/Spectator-Addon/" target="_blank">
+                <a href="https://github.com/CennacEh/Spectator-Addon/">
                 <h2>Spectator Addon</h2>
                 </a>
                 <div class="description">
                 <p>This addon makes it so when a player dies they get turned into Spectator and to <br>continue playing your friends need to craft an egg of life to revive you.</p>
                 </div>
                 <div class="image">
-                <img src="https://media.discordapp.net/attachments/1209108729719554078/1235307850272866344/pack_icon.png2.png?ex=6633e596&is=66329416&hm=55d583ee11e070e187ced9a9db7c27bbcc07f7c15063f46d2ffce96d2fea7152&=&format=webp&quality=lossless&width=497&height=424" alt="Project 1">
+                <img src="https://media.discordapp.net/attachments/1209108729719554078/1235307850272866344/pack_icon.png2.png?ex=6633e596&is=66329416&hm=55d583ee11e070e187ced9a9db7c27bbcc07f7c15063f46d2ffce96d2fea7152&=&format=webp&quality=lossless&width=497&height=424" target="_blank" alt="Project 1">
                 </div>
             </div>
             <!-- Add more projects as needed -->
@@ -55,10 +55,35 @@
         
 
     <section id="contact">
-        <h1>Contact Me</h1>
-        <p><h3>Email</h3>contact.cennac@gmail.com<br></p>
-        <h3>Discord</h3> <a href="https://discordapp.com/users/1147510275063423080" target="_blank">cennac2</a>
-        <!-- Add more contact information or a contact form if needed -->
+        <form name="gform" id="gform" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMJoJbpXyN3B7juhn9imJza0PBuyjhpcq6qGRILcj5NAaYcw/formResponse" method="POST" target="hidden_iframe">
+            <div class="form-group">
+              <label for="firstname">Email:</label>
+              <input type="text" id="firstname" name="entry.2077134131">
+              <div id="emailError" class="error-message" style="display: none;">Please enter a valid email address.</div>
+              <div id="emailSuc" class="error-message" style="display: none;">Email send successfully, you will recieve a reply ASAP.</div>
+            </div>
+            <div class="form-group">
+              <label for="lastname">Form:</label>
+              <textarea id="lastname" name="entry.1056984528"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Submit">
+            </div>
+          </form>
+        </div>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+        
+          
+          <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+          <script src="assets/js/jquery.min.js"></script>
+<script type="text/javascript">var submitted=false;</script>
+<script type="text/javascript">
+$('#gform').on('submit', function(e) {
+  $('#gform *').fadeOut(2000);
+  $('#gform').prepend('Your submission has been processed...');
+});
+</script>
+
     </section>
 
     <footer>
